@@ -1,0 +1,78 @@
+body {
+    background-color: #FFFFF7;
+    cursor: default;
+}
+
+#wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu .items {
+    display: flex;
+}
+
+.menu .item {
+    padding: 0 1rem;
+    color: #333;
+    opacity: 0.5;
+}
+
+.menu .item.selected, .menu .item:hover {
+    opacity: 1;
+}
+
+.legend circle {
+    stroke: #aaa;
+    fill: none;
+}
+
+.legend text {
+    fill: #777;
+    text-anchor: middle;
+	dominant-baseline: middle;
+}
+
+circle.renewable {
+    fill: #7FB069;
+}
+
+circle.oilgascoal {
+    fill: none;
+    stroke: #BCB5B2;
+}
+
+circle.hydroelectric {
+    fill: none;
+    stroke: #5EB1BF;
+    stroke-dasharray: 3,1;
+}
+
+circle.nuclear {
+    fill: none;
+    stroke: #F6AE2D;
+    stroke-dasharray: 4,2;
+}
+
+.country {
+    pointer-events: all;
+}
+
+.country .label {
+    text-anchor: middle;
+}
+
+.popup-center {
+	opacity: 0;
+}
+
+.flourish-popup {
+    pointer-events: none;
+}
+

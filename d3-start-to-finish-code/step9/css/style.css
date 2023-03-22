@@ -1,0 +1,8 @@
+.country .label {
+    text-anchor: middle;
+}
+
+circle {
+    fill: none;
+    stroke: #aaa;
+}
