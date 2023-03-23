@@ -23,9 +23,9 @@ function updateEachGroup(d) {
 function update() {
   let layoutData = layout(data);
 
-  d3.select('#chart')
+  d3.select('#chart') //
     .selectAll('g')
     .data(layoutData)
     .join('g')
-    .each((d, i) => updateEachGroup(d));
+    .each(updateEachGroup);
 }
