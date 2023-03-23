@@ -1,25 +1,29 @@
+function getTruncatedLabel(text) {
+  return text.length <= 10 ? text : text.slice(0, 10) + '...';
+}
+
 function layout(data) {
-    let cellWidth = config.width / config.numColumns;
-    let cellHeight = cellWidth;
+  const labelHeight = 20;
+  const cellWidth = config.width / config.numColumns;
+  const cellHeight = cellWidth + labelHeight;
+  const maxRadius = 0.35 * cellWidth;
 
-    let maxRadius = 0.35 * cellWidth;
+  const radiusScale = d3.scaleSqrt().domain([0, 100]).range([0, maxRadius]);
 
-    let radiusScale = d3.scaleSqrt()
-        .domain([0, 100])
-        .range([0, maxRadius]);
+  let layoutData = data.map(function (d, i) {
+    let item = {};
 
-    let layoutData = data.map(function(d, i) {
-        let item = {};
+    let column = i % config.numColumns;
+    let row = Math.floor(i / config.numColumns);
 
-        let column = i % config.numColumns;
-        let row = Math.floor(i / config.numColumns);
+    item.x = column * cellWidth + 0.5 * cellWidth;
+    item.y = row * cellHeight + 0.5 * cellHeight;
+    item.radius = radiusScale(d.renewable);
+    item.labelText = getTruncatedLabel(d.name);
+    item.labelOffset = maxRadius + labelHeight;
 
-        item.x = column * cellWidth + 0.5 * cellWidth;
-        item.y = row * cellHeight + 0.5 * cellHeight;
-        item.radius = radiusScale(d.renewable);
+    return item;
+  });
 
-        return item;
-    });
-
-    return layoutData;
+  return layoutData;
 }
