@@ -1,18 +1,24 @@
 function layout(data) {
+  let cellWidth = config.width / config.numColumns;
+  let cellHeight = cellWidth;
 
-    let radiusScale = d3.scaleSqrt()
-        .domain([0, 100])
-        .range([0, 20]);
+  let maxRadius = 0.35 * cellWidth;
 
-    let layoutData = data.map(function(d, i) {
-        let item = {};
+  let radiusScale = d3.scaleSqrt().domain([0, 100]).range([0, maxRadius]);
 
-        item.x = i * 10;
-        item.y = 100;
-        item.radius = radiusScale(d.renewable);
+  let layoutData = data.map(function (d, i) {
+    let item = {};
 
-        return item;
-    });
+    let column = i % config.numColumns;
+    let row = Math.floor(i / config.numColumns);
+    // item.x = i * 10;
+    // item.y = 100;
+    item.x = column * cellWidth + 0.5 * cellWidth;
+    item.y = row * cellHeight + 0.5 * cellHeight;
+    item.radius = radiusScale(d.renewable);
 
-    return layoutData;
+    return item;
+  });
+
+  return layoutData;
 }
