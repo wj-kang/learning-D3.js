@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Energy mix by Country 2015</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
     <div id="wrapper">
+      <div id="header">Energy mix by country (2015)</div>
       <div id="controls">
         <div class="menu">
+          <div>Sort by:</div>
           <div class="items"></div>
         </div>
+
+        <div class="legend">
+          <svg width="70" height="70">
+            <g transform="translate(35,35)">
+              <circle />
+              <text>100%</text>
+            </g>
+          </svg>
+        </div>
       </div>
+
       <div id="chart-wrapper">
         <svg width="1200" height="1200">
           <g id="chart"></g>
         </svg>
+      </div>
+
+      <div id="footer">
+        <div>
+          Created by <a href="https://www.wonjunkang.com" target="_blank">Wonjun Kang</a>, following practices on
+          <a href="https://a.co/d/bY4KrTp" target="_blank">D3 Start to Finish</a>
+        </div>
       </div>
     </div>
 

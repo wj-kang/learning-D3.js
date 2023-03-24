@@ -1,61 +1,147 @@
+/* Global */
 body {
-    background-color: #FFFFF7;
-    cursor: default;
+  background-color: #fffff7;
+  color: #333;
+  margin: 0;
+  cursor: default;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #wrapper {
-    width: 1200px;
-    margin: 0 auto;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  color: #777;
+  transition: opacity 0.3s;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+/* Header */
+#header {
+  font-size: 1.5rem;
+  letter-spacing: -0.03rem;
+  padding: 1rem;
+  text-align: right;
+}
+
+/* Controls */
+#controls {
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Menu */
+.menu {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
 }
 
 .menu .items {
-    display: flex;
+  display: flex;
+  cursor: pointer;
 }
 
 .menu .item {
-    padding: 0 1rem;
-    color: #333;
-    opacity: 0.5;
+  padding: 0 1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
 }
 
-.menu .item.selected, .menu .item:hover {
-    opacity: 1;
+.menu .item .label {
+  font-size: 1.2rem;
+  padding-left: 0.2rem;
+  opacity: 0.5;
+  transition: opacity 0.3s;
 }
 
+.menu .item.selected .label,
+.menu .item:hover .label {
+  opacity: 1;
+}
+
+/* Legend */
+.legend circle {
+  fill: none;
+  stroke: #aaa;
+}
+
+.legend text {
+  fill: #777;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+/* Circles */
 circle.renewable {
-    fill: #7FB069;
+  fill: #7fb069;
 }
 
 circle.oilgascoal {
-    fill: none;
-    stroke: #BCB5B2;
+  fill: none;
+  stroke: #bcb5b2;
 }
 
 circle.hydroelectric {
-    fill: none;
-    stroke: #5EB1BF;
-    stroke-dasharray: 3,1;
+  fill: none;
+  stroke: #5eb1bf;
+  stroke-dasharray: 3, 1;
 }
 
 circle.nuclear {
-    fill: none;
-    stroke: #F6AE2D;
-    stroke-dasharray: 4,2;
+  fill: none;
+  stroke: #f6ae2d;
+  stroke-dasharray: 4, 2;
 }
 
+/* Chart */
 .country {
-    pointer-events: all;
+  pointer-events: all;
 }
 
 .country .label {
-    text-anchor: middle;
+  text-anchor: middle;
+  font-size: 0.75rem;
+  fill: #999;
+  font-weight: 600;
+  transition: fill 0.3s;
 }
 
+.country:hover .label {
+  fill: #333;
+}
+
+/* Footer */
+#footer {
+  padding: 1rem 1rem 2rem 1rem;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.25rem;
+}
+
+/* Popup */
 .popup-center {
-	opacity: 0;
+  opacity: 0;
 }
 
 .flourish-popup {
-    pointer-events: none;
+  pointer-events: none;
 }
 
+.flourish-popup-content {
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.flourish-popup-content h3 {
+  text-align: center;
+  margin: 0.25rem 0;
+}
