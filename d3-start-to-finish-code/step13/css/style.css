@@ -1,61 +1,62 @@
 body {
-    background-color: #FFFFF7;
-    cursor: default;
+  background-color: #fffff7;
+  cursor: default;
 }
 
 #wrapper {
-    width: 1200px;
-    margin: 0 auto;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .menu .items {
-    display: flex;
+  display: flex;
+  cursor: pointer;
 }
 
 .menu .item {
-    padding: 0 1rem;
-    color: #333;
-    opacity: 0.5;
+  padding: 0 1rem;
+  color: #333;
+  opacity: 0.5;
 }
 
-.menu .item.selected, .menu .item:hover {
-    opacity: 1;
+.menu .item.selected,
+.menu .item:hover {
+  opacity: 1;
 }
 
 circle.renewable {
-    fill: #7FB069;
+  fill: #7fb069;
 }
 
 circle.oilgascoal {
-    fill: none;
-    stroke: #BCB5B2;
+  fill: none;
+  stroke: #bcb5b2;
 }
 
 circle.hydroelectric {
-    fill: none;
-    stroke: #5EB1BF;
-    stroke-dasharray: 3,1;
+  fill: none;
+  stroke: #5eb1bf;
+  stroke-dasharray: 3, 1;
 }
 
 circle.nuclear {
-    fill: none;
-    stroke: #F6AE2D;
-    stroke-dasharray: 4,2;
+  fill: none;
+  stroke: #f6ae2d;
+  stroke-dasharray: 4, 2;
 }
 
 .country {
-    pointer-events: all;
+  pointer-events: all;
 }
 
 .country .label {
-    text-anchor: middle;
+  text-anchor: middle;
 }
 
 .popup-center {
-	opacity: 0;
+  opacity: 0;
 }
 
 .flourish-popup {
-    pointer-events: none;
+  pointer-events: none;
 }
-
