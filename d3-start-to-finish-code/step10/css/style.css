@@ -1,33 +1,45 @@
 body {
-    background-color: #FFFFF7;
+  background-color: #fffff7;
 }
 
 #wrapper {
-    width: 1200px;
-    margin: 0 auto;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 circle.renewable {
-    fill: #7FB069;
+  fill: #7fb069;
 }
 
 circle.oilgascoal {
-    fill: none;
-    stroke: #BCB5B2;
+  fill: none;
+  stroke: #bcb5b2;
 }
 
 circle.hydroelectric {
-    fill: none;
-    stroke: #5EB1BF;
-    stroke-dasharray: 3,1;
+  fill: none;
+  stroke: #5eb1bf;
+  stroke-dasharray: 3, 1;
 }
 
 circle.nuclear {
-    fill: none;
-    stroke: #F6AE2D;
-    stroke-dasharray: 4,2;
+  fill: none;
+  stroke: #f6ae2d;
+  stroke-dasharray: 4, 2;
+}
+
+.country {
+  pointer-events: all;
 }
 
 .country .label {
-    text-anchor: middle;
+  text-anchor: middle;
+}
+
+.popup-center {
+  opacity: 0;
+}
+
+.flourish-popup {
+  pointer-events: none;
 }
